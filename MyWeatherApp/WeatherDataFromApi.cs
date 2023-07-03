@@ -1,26 +1,54 @@
-﻿using System;
+using System;
+using Newtonsoft.Json;
 
 namespace MyWeatherApp
 {
     public class CurrentWeather
     {
-        public double temperature { get; set; }
-        public double windspeed { get; set; }
-        public double winddirection { get; set; }
-        public int weathercode { get; set; }
-        public int is_day { get; set; }
-        public DateTime time { get; set; }
+        [JsonProperty("temperature")]
+        public double Temperature { get; set; }
+
+        [JsonProperty("windspeed")]
+        public double WindSpeed { get; set; }
+
+        [JsonProperty("winddirection")]
+        public double WindDirection { get; set; }
+
+        [JsonProperty("weathercode")]
+        public int WeatherCode { get; set; }
+
+        [JsonProperty("is_day")]
+        public int IsDay { get; set; }
+
+        [JsonProperty("time")]
+        public DateTime Time { get; set; }
     }
 
     public class WeatherData
     {
-        public double latitude { get; set; }
-        public double longitude { get; set; }
-        public double generationtime_ms { get; set; }
-        public int utc_offset_seconds { get; set; }
-        public string timezone { get; set; }
-        public string timezone_abbreviation { get; set; }
-        public double elevation { get; set; }
-        public CurrentWeather current_weather { get; set; }
+        [JsonProperty("latitude")]
+        public double Latitude { get; set; }
+
+        [JsonProperty("longitude")]
+        public double Longitude { get; set; }
+
+        [JsonProperty("generationtime_ms")]
+        public double GenerationTimeMs { get; set; }
+
+        [JsonProperty("utc_offset_seconds")]
+        public int UtcOffsetSeconds { get; set; }
+
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+
+        [JsonProperty("timezone_abbreviation")]
+        public string TimezoneAbbreviation { get; set; }
+
+        [JsonProperty("elevation")]
+        public double Elevation { get; set; }
+
+        [JsonProperty("current_weather")]
+        public CurrentWeather CurrentWeather { get; set; }
     }
+
 }
